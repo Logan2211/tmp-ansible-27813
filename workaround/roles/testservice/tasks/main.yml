@@ -1,0 +1,9 @@
+---
+
+- name: Notifying the restart handler
+  debug:
+    msg: "Notifying the restart test handler"
+  notify:
+    - Manage LB
+    - Restart test service
+  changed_when: true

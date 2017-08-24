@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: no
+  roles:
+    - role: manage_lb
+      lb_endpoint_active: no
+    - testservice
+    - role: manage_lb
+      lb_endpoint_active: yes
+  vars:
+    lb_listen_handler: Restart test service

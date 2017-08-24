@@ -1,0 +1,13 @@
+---
+
+- name: Remove the service from the LB
+  debug:
+    msg: "Removing the service from the LB rotation"
+  when: not lb_endpoint_active | default('yes') | bool
+  listen: "{{ lb_listen_handler }}"
+
+- name: Add the service to the LB
+  debug:
+    msg: "Adding the endpoint to the LB rotation"
+  when: lb_endpoint_active | default('yes') | bool
+  listen: "{{ lb_listen_handler }}"

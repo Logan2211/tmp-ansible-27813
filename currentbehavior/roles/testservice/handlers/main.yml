@@ -1,0 +1,6 @@
+---
+
+- name: Test restart service
+  debug:
+    msg: "Testing service restart"
+  listen: Restart test service

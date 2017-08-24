@@ -1,0 +1,14 @@
+language: python
+services:
+  - docker
+env:
+  - ANSIBLE_FORCE_COLOR=1
+script:
+  - >
+    sudo apt-get update && apt-get install -y build-essential python-dev
+    libssl-dev libffi-dev
+  - sudo pip install ansible
+  - ansible-playbook currentbehavior/playbook.yml
+  - ansible-playbook workaround/playbook.yml
+  - ansible-playbook featurereq/playbook.yml
+  - ansible-playbook featurereq2/playbook.yml

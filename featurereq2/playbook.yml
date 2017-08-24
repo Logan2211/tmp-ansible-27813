@@ -1,0 +1,14 @@
+- hosts: localhost
+  gather_facts: no
+  pre_handlers:
+    - name: Remove the service from the LB rotation
+      debug:
+        msg: "Removing the service from the LB"
+      listen: Restart test service
+  post_handlers:
+    - name: Remove the service from the LB rotation
+      debug:
+        msg: "Add the service back to the LB"
+      listen: Restart test service
+  roles:
+    - testservice

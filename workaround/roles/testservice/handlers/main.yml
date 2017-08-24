@@ -1,0 +1,10 @@
+---
+
+- name: Test restart service
+  debug:
+    msg: "Testing service restart"
+  listen: Restart test service
+
+- meta: noop
+  listen: Manage LB
+  when: false

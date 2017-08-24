@@ -1,0 +1,7 @@
+---
+
+- name: Notifying the restart handler
+  debug:
+    msg: "Notifying the restart test handler"
+  notify: Restart test service
+  changed_when: true
